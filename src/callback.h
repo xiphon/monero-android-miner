@@ -36,7 +36,7 @@ JavaVM *javaVm = nullptr;
 jobject classLoader;
 jmethodID findClassMethod;
 
-constexpr const char className[] = "com/wat/basicidletest/MoneroMining";
+constexpr const char className[] = "monero/android/miner/Miner";
 constexpr const char methodName[] = "miningCallback";
 
 extern "C"

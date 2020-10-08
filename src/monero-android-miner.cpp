@@ -47,7 +47,7 @@ double cpuLoadModifier = 0.5;
 
 extern "C"
 {
-  JNIEXPORT jboolean JNICALL Java_com_wat_basicidletest_MoneroMining_miningStart(
+  JNIEXPORT jboolean JNICALL Java_monero_android_miner_Miner_miningStart(
     JNIEnv *env,
     jobject,
     jstring id,
@@ -103,14 +103,14 @@ extern "C"
     return true;
   }
 
-  JNIEXPORT void JNICALL Java_com_wat_basicidletest_MoneroMining_miningStop(JNIEnv *, jobject)
+  JNIEXPORT void JNICALL Java_monero_android_miner_Miner_miningStop(JNIEnv *, jobject)
   {
     std::lock_guard<std::mutex> lock(mutex);
 
     hashers.clear();
   }
 
-  JNIEXPORT void JNICALL Java_com_wat_basicidletest_MoneroMining_adjustCpuLoad(JNIEnv *, jobject, jdouble modifier)
+  JNIEXPORT void JNICALL Java_monero_android_miner_Miner_adjustCpuLoad(JNIEnv *, jobject, jdouble modifier)
   {
     std::lock_guard<std::mutex> lock(mutex);
 
@@ -121,7 +121,7 @@ extern "C"
     }
   }
 
-  JNIEXPORT jdouble JNICALL Java_com_wat_basicidletest_MoneroMining_hashrate(JNIEnv *, jobject)
+  JNIEXPORT jdouble JNICALL Java_monero_android_miner_Miner_hashrate(JNIEnv *, jobject)
   {
     std::lock_guard<std::mutex> lock(mutex);
 
